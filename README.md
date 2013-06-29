@@ -1,0 +1,4 @@
+ansible-playbook-sample
+=======================
+
+Ansibleのplaybookサンプル。
