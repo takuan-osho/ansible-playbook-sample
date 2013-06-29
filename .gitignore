@@ -33,3 +33,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Mercurial
+.hg
+
+# Vagrant
+.vagrant
