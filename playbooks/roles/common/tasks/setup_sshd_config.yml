@@ -1,0 +1,9 @@
+---
+
+# file: roles/common/tasks/setup_sshd_config.yml
+
+- name: Set up sshd_config
+  template: src=sshd_config.j2 dest=/etc/ssh/sshd_config owner=root group=root mode=644 backup=yes
+  tags: sshd_config
+  notify:
+    - restart sshd

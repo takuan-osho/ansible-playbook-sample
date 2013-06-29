@@ -1,0 +1,13 @@
+---
+
+# file: roles/common/tasks/install_python.yml
+
+- name: Install Python
+  apt: pkg={{ item }} force=yes update_cache=yes
+  with_items: ${python}
+  tags: python
+
+- name: Pip install basic python packages
+  pip: name={{ item }} state=latest
+  with_items: ${python_packages}
+  tags: python_packages

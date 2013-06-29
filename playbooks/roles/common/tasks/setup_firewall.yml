@@ -1,0 +1,25 @@
+---
+
+# file: roles/common/tasks/setup_firewall.yml
+
+- name: Reset firewall
+  command: ufw reset
+  tags: firewall
+
+- name: Set up firewall(default)
+  command: ufw default deny
+  tags: firewall
+
+- name: Set up firewall(TCP)
+  command: ufw allow {{ item }}
+  with_items: ${allow_tcp_port}
+  tags: firewall
+
+- name: Set up firewall(UDP)
+  command: ufw allow {{ item }}
+  with_items: ${allow_udp_port}
+  tags: firewall
+
+- name: Enable firewall
+  command: ufw enable
+  tags: firewall

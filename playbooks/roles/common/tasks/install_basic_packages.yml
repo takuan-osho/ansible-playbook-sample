@@ -1,0 +1,13 @@
+---
+
+# file: roles/common/tasks/install_basic_packages.yml
+
+- name: Install basic server packages
+  apt: pkg={{ item }} force=yes update_cache=yes
+  with_items: ${system_packages}
+  tags: system_packages
+
+- name: Install editor
+  apt: pkg={{ item }}
+  with_items: ${editor}
+  tags: editor

@@ -1,0 +1,11 @@
+---
+
+# file: group_vars/vps
+
+# Settings of Ansible
+remote_user: taku
+
+# Settings of sshd_config
+port: {{ your_favorite_port_number }}
+permit_root_login: no
+password_authentication: no

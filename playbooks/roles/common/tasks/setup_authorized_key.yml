@@ -1,0 +1,9 @@
+---
+
+# file: roles/common/tasks/setup_authorized_key.yml
+
+- name: Set up authorized key file
+  authorized_key: user={{ remote_user }} key="{{ lookup('file', local_public_key_file_path) }}" path={{ temp_authorized_keys_file_path }}
+  tags: authorized_key
+  notify:
+    - add authorized key

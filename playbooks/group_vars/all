@@ -1,0 +1,31 @@
+---
+
+# file: group_vars/all
+
+# General Settings of Ansible
+connection_type: ssh
+local_user: taku
+remote_user: taku
+
+local_user_home: /Users/{{ local_user }}
+remote_user_home: /home/{{ remote_user }}
+
+# General settings of sshd_config
+port: 22
+permit_root_login: yes
+password_authentication: yes
+
+authorized_keys_file_path: .ssh/authorized_keys
+temp_authorized_keys_file_path: /var/tmp/authorized_keys
+
+public_key_file_path: .ssh/id_rsa.pub
+local_public_key_file_path: "{{ local_user_home }}/{{ public_key_file_path }}"
+
+# General settings of firewall
+allow_tcp_port:
+  - 80/tcp
+  - {{ your_favorite_port_number }}/tcp
+
+allow_udp_port:
+  - 80/udp
+  - 60482/udp

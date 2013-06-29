@@ -1,0 +1,11 @@
+---
+
+# file: group_vars/local
+
+# Settings of Ansible
+remote_user: vagrant
+
+# Settings of sshd_config
+port: {{ your_favorite_port_number }}
+permit_root_login: no
+password_authentication: no

@@ -1,0 +1,6 @@
+---
+
+# file: roles/common/handlers/add_authorized_key.yml
+
+- name: add authorized key
+  shell: cat {{ temp_authorized_keys_file_path }} >> {{ remote_user_home }}/{{ authorized_keys_file_path }}

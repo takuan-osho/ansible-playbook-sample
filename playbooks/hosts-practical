@@ -1,0 +1,5 @@
+[vps]
+sakura-vps ansible_ssh_user=taku ansible_ssh_port={{ your_favorite_group_number }} ansible_connection=ssh
+
+[local]
+192.168.33.11 ansible_ssh_user=vagrant ansible_ssh_port={{ your_favorite_group_number }} ansible_connection=ssh

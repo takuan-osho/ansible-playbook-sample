@@ -1,0 +1,9 @@
+---
+
+# file: main.yml
+
+- hosts: all
+  user: ${user}
+  sudo: True
+  roles:
+    - common

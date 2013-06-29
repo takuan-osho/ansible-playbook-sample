@@ -1,0 +1,6 @@
+---
+
+# file: roles/common/handlers/main.yml
+
+- include: add_authorized_key.yml
+- include: restart_sshd.yml

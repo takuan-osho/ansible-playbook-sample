@@ -1,0 +1,8 @@
+---
+
+# file: roles/common/tasks/main.yml
+
+- include: setup_authorized_key.yml
+- include: install_basic_packages.yml
+- include: install_python.yml
+- include: setup_sshd_config.yml
